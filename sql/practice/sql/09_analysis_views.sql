@@ -54,3 +54,29 @@ JOIN v_innings i1
     AND i1.innings = 1
 
 WHERE m.result = 'win';
+
+DROP VIEW IF EXISTS v_innings;
+CREATE VIEW v_innings AS
+SELECT match_id,
+       innings,
+       MIN(batting_team) AS batting_team,
+       MIN(bowling_team) AS bowling_team,
+       SUM(total_runs) AS runs,
+       SUM(is_wicket) AS wickets,
+       SUM(is_legal) AS legal_balls
+FROM v_ball
+WHERE innings IN (1,2)
+GROUP BY match_id, innings;
+
+DROP VIEW IF EXISTS v_match_totals;
+CREATE VIEW v_match_totals AS
+SELECT m.*,
+       i1.runs AS first_innings_runs,
+       i1.batting_team AS bat_first_team,
+       CASE WHEN m.match_winner = i1.batting_team
+            THEN 0 ELSE 1 END AS chase_won
+FROM matches_clean m
+JOIN v_innings i1
+  ON i1.match_id = m.match_id
+ AND i1.innings = 1
+WHERE m.result = 'win';
