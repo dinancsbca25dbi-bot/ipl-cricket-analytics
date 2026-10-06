@@ -2,15 +2,15 @@ import pandas as pd
 import sqlite3
 
 # Database path
-db_path = r"C:\Users\dbila\IPL_cricket_analytics\data\raw\ipl.db"
+db_path = r"C:\Users\dinan\ipl_cricket_analytics\ipl-cricket-analytics\data\raw\ipl.db"
 
 # CSV files
 files = {
-    "matches": r"C:\Users\dbila\IPL_cricket_analytics\data\raw\tables\matches.csv",
-    "deliveries": r"C:\Users\dbila\IPL_cricket_analytics\data\raw\tables\deliveries.csv",
-    "players": r"C:\Users\dbila\IPL_cricket_analytics\data\raw\tables\players.csv",
-    "teams": r"C:\Users\dbila\IPL_cricket_analytics\data\raw\tables\teams.csv",
-    "venues": r"C:\Users\dbila\IPL_cricket_analytics\data\raw\tables\venues.csv"
+    "matches": r"C:\Users\dinan\ipl_cricket_analytics\ipl-cricket-analytics\data\raw\tables\matches.csv",
+    "deliveries": r"C:\Users\dinan\ipl_cricket_analytics\ipl-cricket-analytics\data\raw\tables\deliveries.csv",
+    "players": r"C:\Users\dinan\ipl_cricket_analytics\ipl-cricket-analytics\data\raw\tables\players.csv",
+    "teams": r"C:\Users\dinan\ipl_cricket_analytics\ipl-cricket-analytics\data\raw\tables\teams.csv",
+    "venues": r"C:\Users\dinan\ipl_cricket_analytics\ipl-cricket-analytics\data\raw\tables\venues.csv"
 }
 
 # Connect to SQLite database

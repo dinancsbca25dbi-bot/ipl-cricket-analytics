@@ -1,6 +1,6 @@
 import sqlite3
 
-conn = sqlite3.connect(r"C:\Users\dbila\IPL_cricket_analytics\data\raw\ipl.db")
+conn = sqlite3.connect(r"C:\Users\dinan\ipl_cricket_analytics\ipl-cricket-analytics\notebooks\ipl.db")
 
 tables = conn.execute(
     "SELECT name FROM sqlite_master WHERE type='table'"
